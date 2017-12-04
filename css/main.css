@@ -1,0 +1,93 @@
+    /**************************
+Layout
+
+In your webpage there will be 3 layouts. Use percentages to control the width of the <li> elements and the margins between them.
+1. Less than 600px - one column layout
+2. Between 600px and 1200px - two column layout
+3. Above 1200px - four column layout
+
+Transitions and Transforms
+
+Each image should have a transition and transform applied in CSS
+The transition property should be your transform which must have a minimum duration of 0.2s and must specify a transition-timing-function property such as "ease-in".
+You can use any tranform you wish:  scale, rotate, translate etc.
+The transition effect should start with a hover event over any image.
+
+Image Attribution
+
+All images used belong to:
+Markus Spiske - https://500px.com/markusspiske (Links to an external site.)Links to an external site. 
+Yinan Chen - https://500px.com/webmaster85 (Links to an external site.)Links to an external site. 
+Fahim Akhter - https://500px.com/fahimakhter (Links to an external site.)Links to an external site. 
+
+**************************/
+    
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+    body {
+        font-family: 'Lato', 'Arial', 'Helvetica', sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: #A89718;
+        background: #f2f2f2 linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+        position: absolute;
+    }
+    
+    .wrap {
+        width: 90%;
+        margin: 3em auto;
+    }
+    
+    ul {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        margin-top: 2em;
+    }
+    
+    li {
+        margin: 1.5em 0;
+        float: left;
+        text-align: center;
+    }
+    
+    img {
+        max-width: 90%;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+        filter: saturate(60%) brightness(70%) grayscale(0.4);
+        transition: 0.6s ease-in-out;
+        position: relative;
+    }
+    
+    img:hover {
+        box-shadow: 0 6px 25px 0 rgba(0, 0, 0, 0.5);
+        filter: saturate(100%) brightness(110%) grayscale(0.1);
+        transform: scale(1.1) translate(0, 0);
+        z-index: 200;
+    }
+    
+    footer {
+        clear: both;
+        line-height: 4em;
+        text-align: right;
+    }
+    
+    @media screen and (min-width:600px) {
+        li {
+            width: 50%;
+        }
+        img:hover {
+            transform: scale(1.1) translate(0, 0);
+        }
+    }
+    
+    @media screen and (min-width:1200px) {
+        li {
+            width: 25%;
+        }
+        img:hover {
+            transform: scale(1.2) translate(0, -0.5em);
+        }
+        
+    }
